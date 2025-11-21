@@ -31,4 +31,51 @@ This project is designed to help bridge the communication gap for individuals wh
 ---
 
 ## 📂 Project Structure
+Hearing_Hand_Project/
+│── app.py # Main webcam inference app
+│── body.py # Stores ASL/ISL dataset labels
+│── config.py # Reserved for future configs
+│── models/
+│ └── NEW_FINAL.pt # Trained YOLOv8 model
+│── README.md # Project documentation
+
+
+## 🖥 How It Works (Architecture)
+
+### 1. **MediaPipe Holistic** identifies hand + pose landmarks  
+Used to highlight the hands even when environment lighting is poor.
+
+### 2. **Image converted to landmark-mask (black background)**  
+YOLO sees only the extracted landmark drawing → makes detection more stable.
+
+### 3. **YOLOv8 model** predicts the gesture from the mask image  
+(Uses `NEW_FINAL.pt` model)
+
+### 4. **Final prediction shown on the screen**  
+Bounding box + label + real-time FPS.
+
+---
+
+## 🧪 Example Code (Look inside `app.py`)
+
+The core pipeline (from your file) includes:
+
+- MediaPipe for landmark extraction
+- YOLOv8 inference on processed image  
+- Post-processing + cropping + class extraction  
+
+Reference code extracted from `app.py` → :contentReference[oaicite:1]{index=1}
+
+---
+
+## 🧩 Dataset Labels
+
+The system supports A–Z alphabet gestures:  
+(From your `body.py`) → :contentReference[oaicite:2]{index=2}
+
+```python
+dataset = ["A","B","C","D","E","F","G","H","I","J",
+           "K","L","M","N","O","P","Q","R","S","T",
+           "U","V","W","X","Y","Z"]
+
 
