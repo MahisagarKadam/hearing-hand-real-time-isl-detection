@@ -79,6 +79,8 @@ dataset = ["A","B","C","D","E","F","G","H","I","J",
            "U","V","W","X","Y","Z"]
 
 
+---
+
 ## 🛠 Setup Instructions
 
 Follow these steps to run the Hearing Hand – Real-Time Indian Sign Language (ISL) Detection System on your system.
