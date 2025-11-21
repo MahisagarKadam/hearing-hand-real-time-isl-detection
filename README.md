@@ -79,7 +79,7 @@ dataset = ["A","B","C","D","E","F","G","H","I","J",
            "U","V","W","X","Y","Z"]
 
 
-🛠 Setup Instructions
+## Setup Instructions
 1. Clone the Repository
 git clone https://github.com/MahisagarKadam/hearing-hand-real-time-isl-detection.git
 cd hearing-hand-real-time-isl-detection
