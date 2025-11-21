@@ -79,3 +79,29 @@ dataset = ["A","B","C","D","E","F","G","H","I","J",
            "U","V","W","X","Y","Z"]
 
 
+🛠 Setup Instructions
+1. Clone the Repository
+git clone https://github.com/MahisagarKadam/hearing-hand-real-time-isl-detection.git
+cd hearing-hand-real-time-isl-detection
+
+2. Install Dependencies
+pip install -r requirements.txt
+
+
+If you don’t have a requirements file, install manually:
+
+pip install opencv-python mediapipe ultralytics numpy
+
+3. Add Your YOLO Model
+
+Place the file:
+
+NEW_FINAL.pt
+
+
+inside models/ (or update the path in app.py).
+
+4. Run the App
+python app.py
+
+
