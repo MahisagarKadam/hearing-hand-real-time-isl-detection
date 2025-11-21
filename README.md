@@ -79,29 +79,56 @@ dataset = ["A","B","C","D","E","F","G","H","I","J",
            "U","V","W","X","Y","Z"]
 
 
-## Setup Instructions
-1. Clone the Repository
+## 🛠 Setup Instructions
+
+Follow these steps to run the Hearing Hand – Real-Time Indian Sign Language (ISL) Detection System on your system.
+
+---
+
+### 1️⃣ Clone the Repository
 git clone https://github.com/MahisagarKadam/hearing-hand-real-time-isl-detection.git
 cd hearing-hand-real-time-isl-detection
 
-2. Install Dependencies
+---
+
+### 2️⃣ Install Dependencies
 pip install -r requirements.txt
 
-
-If you don’t have a requirements file, install manually:
-
+If requirements.txt is not available, install manually:
 pip install opencv-python mediapipe ultralytics numpy
 
-3. Add Your YOLO Model
+---
 
-Place the file:
+### 3️⃣ Add the YOLOv8 Model
+Place your trained model file inside the models/ directory:
+models/
+└── NEW_FINAL.pt
 
-NEW_FINAL.pt
+(If the model name is different, update the path inside app.py.)
 
+---
 
-inside models/ (or update the path in app.py).
-
-4. Run the App
+### 4️⃣ Run the Application
 python app.py
+
+This will open your webcam and start real-time ISL gesture detection.
+
+---
+
+### 5️⃣ Camera Troubleshooting
+If the camera does not start, open app.py and try changing the camera index:
+
+cv2.VideoCapture(0)
+cv2.VideoCapture(1)
+cv2.VideoCapture(2)
+
+---
+
+### ✔ You're All Set!
+The system will now:
+- Read webcam input  
+- Extract hand + pose landmarks  
+- Run YOLOv8 prediction  
+- Display real-time ISL text output  
 
 
